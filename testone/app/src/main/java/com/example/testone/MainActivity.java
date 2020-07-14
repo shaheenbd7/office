@@ -43,10 +43,10 @@ public class MainActivity extends WearableActivity {
         setLocation();
 
         // set Temperature
-        setTemperature();
+        //setTemperature();
 
         // set WindSpeed
-        setWindSpeed();
+        // setWindSpeed();
 
         // set weather Comment
         setWeatherComment();
@@ -71,11 +71,8 @@ public class MainActivity extends WearableActivity {
                 Log.d("Data: ",response.body().getMain().getFeels_like()+" C" );
                 Log.d("Data: ",response.body().getMain().getHumidity() +" C" );
 
-//                tempText.setText("Temp"+" "+response.body().getMain().getTemp()+" C");
-//                descText.setText("Feels Like"+" "+response.body().getMain().getFeels_like());
-//                humidityText.setText("Humidity"+" "+response.body().getMain().getHumidity());
-
-
+                mTextViewTemperature.setText("Temp: "+response.body().getMain().getTemp()+"°");
+                mTextViewWindSpeed.setText("Feels Like: "+response.body().getMain().getFeels_like()+"°");
             }
 
             @Override
