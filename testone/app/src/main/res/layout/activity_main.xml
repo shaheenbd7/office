@@ -79,9 +79,7 @@
             android:textColor="@color/black_86p"
             android:text="Comment"
             android:textAlignment="center"
-
             />
-
 
     </LinearLayout>
 
