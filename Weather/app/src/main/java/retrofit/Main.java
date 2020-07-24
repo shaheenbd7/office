@@ -1,5 +1,7 @@
 package retrofit;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Main {
     @SerializedName("temp")
     String temp;
@@ -9,7 +11,6 @@ public class Main {
 
     @SerializedName("feels_like")
     String feels_like;
-
 
     public String getTemp() {
         return temp;

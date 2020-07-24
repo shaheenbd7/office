@@ -32,7 +32,12 @@ dependencies {
     implementation 'androidx.wear:wear:1.0.0'
     compileOnly 'com.google.android.wearable:wearable:2.7.0'
 
+    // RetroFit, Json Converter
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    // Animation
+    def lottieVersion = "3.0.7"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
