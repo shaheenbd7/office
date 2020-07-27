@@ -31,6 +31,10 @@ public class MainActivity extends WearableActivity {
     TextView todayWindSpeed;
     TextView description;
     LottieAnimationView[] mAV = new LottieAnimationView[5];
+    TextView[] days = new TextView[6];
+    TextView[] temps = new TextView[6];
+    TextView[] rains = new TextView[6];
+    TextView[] winds = new TextView[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class MainActivity extends WearableActivity {
     void iniatializeUI() {
         // initialize Today
         initializeUIToday();
+        initializeUIForecast();
     }
 
     void initializeUIToday() {
@@ -70,6 +75,37 @@ public class MainActivity extends WearableActivity {
         todayWindSpeed = (TextView) findViewById(R.id.todayWindSpeed);
         //Description
         description = (TextView) findViewById(R.id.description);
+    }
+
+    void initializeUIForecast() {
+
+        days[0] = (TextView) findViewById(R.id.day1);
+        days[1] = (TextView) findViewById(R.id.day2);
+        days[2] = (TextView) findViewById(R.id.day3);
+        days[3] = (TextView) findViewById(R.id.day4);
+        days[4] = (TextView) findViewById(R.id.day5);
+        days[5] = (TextView) findViewById(R.id.day6);
+
+        temps[0] = (TextView) findViewById(R.id.temp1);
+        temps[1] = (TextView) findViewById(R.id.temp2);
+        temps[2] = (TextView) findViewById(R.id.temp3);
+        temps[3] = (TextView) findViewById(R.id.temp4);
+        temps[4] = (TextView) findViewById(R.id.temp5);
+        temps[5] = (TextView) findViewById(R.id.temp6);
+
+        rains[0] = (TextView) findViewById(R.id.rain1);
+        rains[1] = (TextView) findViewById(R.id.rain2);
+        rains[2] = (TextView) findViewById(R.id.rain3);
+        rains[3] = (TextView) findViewById(R.id.rain4);
+        rains[4] = (TextView) findViewById(R.id.rain5);
+        rains[5] = (TextView) findViewById(R.id.rain6);
+
+        winds[0] = (TextView) findViewById(R.id.wind1);
+        winds[1] = (TextView) findViewById(R.id.wind2);
+        winds[2] = (TextView) findViewById(R.id.wind3);
+        winds[3] = (TextView) findViewById(R.id.wind4);
+        winds[4] = (TextView) findViewById(R.id.wind5);
+        winds[5] = (TextView) findViewById(R.id.wind6);
     }
 
     void showData() {
@@ -118,8 +154,19 @@ public class MainActivity extends WearableActivity {
                 mAV[4].setVisibility(View.VISIBLE);
         }
 
+        // ForCast Data
+        for(int i=0;i<6;i++) {
+              int tem = getValue(dailyData[i+1].getTemp().getMax());
+              temps[i].setText( tem + "°c" );
+              winds[i].setText( dailyData[i+1].getWind_speed() + " m/s" );
+              rains[i].setText( dailyData[i+1].getRain() + " mm" );
+        }
+    }
 
-
+    int getValue(String t) {
+        double tt = Double.parseDouble(t);
+        int tem = (int) Math.round(tt);
+        return tem;
     }
 
 
