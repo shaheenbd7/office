@@ -6,7 +6,6 @@
 
     <uses-feature android:name="android.hardware.type.watch" />
 
-    // Network Permission
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application

@@ -42,6 +42,17 @@ public class Daily {
     @SerializedName("wind_speed")
     String wind_speed;
 
+    @SerializedName("dt")
+    String timeStamp;
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
     public Temp getTemp() {
         return temp;
     }
