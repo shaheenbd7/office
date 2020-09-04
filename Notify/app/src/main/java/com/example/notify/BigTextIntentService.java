@@ -13,11 +13,6 @@ import androidx.core.app.NotificationCompat.BigTextStyle;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-//import com.example.android.wearable.wear.common.mock.MockDatabase;
-//import com.example.android.wearable.wear.wearnotifications.GlobalNotificationBuilder;
-//import com.example.android.wearable.wear.wearnotifications.MainActivity;
-//import com.example.android.wearable.wear.wearnotifications.R;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -148,30 +143,30 @@ public class BigTextIntentService extends IntentService {
 
         // 4. Create additional Actions (Intents) for the Notification
 
-        // Snooze Action
-        Intent snoozeIntent = new Intent(this, BigTextIntentService.class);
-        snoozeIntent.setAction(BigTextIntentService.ACTION_SNOOZE);
-
-        PendingIntent snoozePendingIntent = PendingIntent.getService(this, 0, snoozeIntent, 0);
-        NotificationCompat.Action snoozeAction =
-                new NotificationCompat.Action.Builder(
-                        R.drawable.ic_alarm_white_48dp,
-                        "Snooze",
-                        snoozePendingIntent)
-                        .build();
+//        // Snooze Action
+//        Intent snoozeIntent = new Intent(this, BigTextIntentService.class);
+//        snoozeIntent.setAction(BigTextIntentService.ACTION_SNOOZE);
+//
+//        PendingIntent snoozePendingIntent = PendingIntent.getService(this, 0, snoozeIntent, 0);
+//        NotificationCompat.Action snoozeAction =
+//                new NotificationCompat.Action.Builder(
+//                        R.drawable.ic_alarm_white_48dp,
+//                        "Snooze",
+//                        snoozePendingIntent)
+//                        .build();
 
 
         // Dismiss Action
-        Intent dismissIntent = new Intent(this, BigTextIntentService.class);
-        dismissIntent.setAction(BigTextIntentService.ACTION_DISMISS);
+//        Intent dismissIntent = new Intent(this, BigTextIntentService.class);
+//        dismissIntent.setAction(BigTextIntentService.ACTION_DISMISS);
 
-        PendingIntent dismissPendingIntent = PendingIntent.getService(this, 0, dismissIntent, 0);
-        NotificationCompat.Action dismissAction =
-                new NotificationCompat.Action.Builder(
-                        R.drawable.ic_cancel_white_48dp,
-                        "Dismiss",
-                        dismissPendingIntent)
-                        .build();
+//        PendingIntent dismissPendingIntent = PendingIntent.getService(this, 0, dismissIntent, 0);
+//        NotificationCompat.Action dismissAction =
+//                new NotificationCompat.Action.Builder(
+//                        R.drawable.ic_cancel_white_48dp,
+//                        "Dismiss",
+//                        dismissPendingIntent)
+//                        .build();
 
 
         // 5. Build and issue the notification.
@@ -195,9 +190,9 @@ public class BigTextIntentService extends IntentService {
                 .setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary))
                 .setCategory(Notification.CATEGORY_REMINDER)
                 .setPriority(bigTextStyleReminderAppData.getPriority())
-                .setVisibility(bigTextStyleReminderAppData.getChannelLockscreenVisibility())
-                .addAction(snoozeAction)
-                .addAction(dismissAction);
+                .setVisibility(bigTextStyleReminderAppData.getChannelLockscreenVisibility());
+//                .addAction(snoozeAction)
+//                .addAction(dismissAction);
 
         return notificationCompatBuilder;
     }

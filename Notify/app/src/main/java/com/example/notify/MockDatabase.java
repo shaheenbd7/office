@@ -69,16 +69,14 @@ public final class MockDatabase {
 
             // Standard Notification values:
             // Title for API <16 (4.0 and below) devices.
-            mContentTitle = "Don't forget to...";
+            mContentTitle = "Veosens";
             // Content for API <24 (4.0 and below) devices.
-            mContentText = "Feed Dogs and check garage!";
+            mContentText = "Be Active, Walk More";
             mPriority = NotificationCompat.PRIORITY_DEFAULT;
 
             // BigText Style Notification values:
-            mBigContentTitle = "Don't forget to...";
-            mBigText =
-                    "... feed the dogs before you leave for work, and check the garage to "
-                            + "make sure the door is closed.";
+            mBigContentTitle = "Veosens";
+            mBigText = "Be Active, Walk More";
             mSummaryText = "Dogs and Garage";
 
             // Notification channel values (for devices targeting 26 and above):

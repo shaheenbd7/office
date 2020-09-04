@@ -39,6 +39,7 @@ public class MainActivity extends WearableActivity {
 
     public void sendOnChannel1(View v) {
         Log.d(TAG, "sendOnChannel1: ");
+        generateBigTextStyleNotification();
     }
 
     /*
