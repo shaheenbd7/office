@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "641978423115",
+    "firebase_url": "https://axonrcpc.firebaseio.com",
+    "project_id": "axonrcpc",
+    "storage_bucket": "axonrcpc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641978423115:android:4e6451097f7da857397ace",
+        "android_client_info": {
+          "package_name": "com.shan.axon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641978423115-doh1bh3mf0iq2akohsm521vuf7r691fo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shan.axon",
+            "certificate_hash": "662cff23434ee307437b902c00e40c7853670cdf"
+          }
+        },
+        {
+          "client_id": "641978423115-s0v7mr6n1bu14hrsc0lkf8ced0rvccmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfh9KXdRE_EV3NcCROfNtx8ih4uqg2MzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641978423115-s0v7mr6n1bu14hrsc0lkf8ced0rvccmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
