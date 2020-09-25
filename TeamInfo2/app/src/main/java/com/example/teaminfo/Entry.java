@@ -27,7 +27,7 @@ public class Entry extends AppCompatActivity {
 
     public static final int GOOGLE_SIGN = 123;
     Button btnLogin, btnLogout;
-    TextView status;
+    //TextView status;
 
     FirebaseAuth mauth;
     GoogleSignInClient mGoogleSignInClient;
@@ -39,7 +39,7 @@ public class Entry extends AppCompatActivity {
 
         btnLogin = (Button) findViewById(R.id.login_btn);
         btnLogout = (Button) findViewById(R.id.logout_btn);
-        status = (TextView) findViewById(R.id.status);
+        //status = (TextView) findViewById(R.id.status);
 
         btnLogout.setVisibility(View.INVISIBLE);
 
@@ -74,7 +74,7 @@ public class Entry extends AppCompatActivity {
     }
 
     void signInGoogle() {
-        status.setText("Logging.....");
+       // status.setText("Logging.....");
         Intent signIntent  = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signIntent, GOOGLE_SIGN);
     }
@@ -104,12 +104,12 @@ public class Entry extends AppCompatActivity {
 
                 btnLogout.setVisibility(View.VISIBLE);
                 FirebaseUser user = mauth.getCurrentUser();
-                status.setText("Logged In , wow");
+               // status.setText("Logged In , wow");
                 update(user);
 //                btnLogout.setVisibility(View.VISIBLE);
 //                btnLogin.setVisibility(View.GONE);;
             } else {
-                status.setText("Dhur hala");
+                //status.setText("Dhur ");
 
             }
         });
