@@ -119,7 +119,7 @@ public class Entry extends AppCompatActivity {
         if(user != null) {
             String name = user.getDisplayName();
             String email = user.getEmail();
-            status.setText(name+"\n"+email+"\n");
+            //status.setText(name+"\n"+email+"\n");
             btnLogout.setVisibility(View.VISIBLE);
             btnLogin.setVisibility(View.GONE);
 
@@ -128,7 +128,7 @@ public class Entry extends AppCompatActivity {
             finish();
 
         } else {
-            status.setText("Logged OUT !!!!");
+            //status.setText("Logged OUT !!!!");
             btnLogout.setVisibility(View.GONE);
             btnLogin.setVisibility(View.VISIBLE);
         }
