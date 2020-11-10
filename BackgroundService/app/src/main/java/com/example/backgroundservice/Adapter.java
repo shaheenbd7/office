@@ -17,11 +17,11 @@ import java.util.ArrayList;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private Context mContext;
-    private ArrayList<Item> itemArrarList;
+    private ArrayList<Item> itemArrayList;
 
     public Adapter(Context mContext, ArrayList<Item> itemArrarList) {
         this.mContext = mContext;
-        this.itemArrarList = itemArrarList;
+        this.itemArrayList = itemArrarList;
     }
 
     @NonNull
@@ -33,7 +33,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Item currentItem = itemArrarList.get(position);
+        Item currentItem = itemArrayList.get(position);
 
         String imageUrl = currentItem.getImageUrl();
         String creatorName = currentItem.getCreator();
@@ -45,7 +45,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return itemArrarList.size();
+        return itemArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -1,11 +1,17 @@
 package com.example.backgroundservice;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Service;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.os.Trace;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,10 +28,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "TEST :: ";
+
     private RecyclerView recyclerView;
-    private Adapter adapter;
-    private ArrayList<Item> itemList;
-    private RequestQueue requestQueue;
+    public static  Adapter adapter;
+    public static  ArrayList<Item> itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,55 +43,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         itemList = new ArrayList<>();
+        adapter = new Adapter(  MainActivity.this, itemList);
+        recyclerView.setAdapter(adapter);
 
-        requestQueue = Volley.newRequestQueue(this);
-
-        //parseJson();
-        startThread();
+        callService();
     }
 
-    private void startThread() {
-        MyThread myThread = new MyThread();
-        myThread.start();
+    void callService() {
+        Intent intent = new Intent(this, MyService.class);
+        startService(intent);
     }
 
-    class MyThread extends Thread {
-        @Override
-        public void run() {
-            super.run();
-            parseJson();
-        }
+    public static void update() {
+        Log.d(TAG, "update: " + itemList.size());
+        adapter.notifyDataSetChanged();
     }
-
-    private void parseJson() {
-        String url = "https://pixabay.com/api/?key=5303976-fd6581ad4ac165d1b75cc15b3&q=kitten&image_type=photo&pretty=true";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("hits");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject hit = jsonArray.getJSONObject(i);
-                                String creatorName = hit.getString("user");
-                                String imageUrl = hit.getString("webformatURL");
-                                int likeCount = hit.getInt("likes");
-                                itemList.add(new Item(imageUrl, creatorName));
-                            }
-                            adapter = new Adapter(MainActivity.this, itemList);
-                            recyclerView.setAdapter(adapter);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-        requestQueue.add(request);
-    }
-
-
 }
