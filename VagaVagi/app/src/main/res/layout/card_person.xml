@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:outlineSpotShadowColor="@color/cardview_dark_background"
+        android:outlineAmbientShadowColor="@color/cardview_light_background"
+        android:layout_margin="5dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/person_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/ic_launcher_background"
+                android:scaleType="centerCrop"
+                android:layout_margin="10dp"
+                />
+
+            <TextView
+                android:id="@+id/person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/person_image"
+                android:text="Person Name"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                />
+
+            <TextView
+                android:id="@+id/person_status"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="18dp"
+                android:text="owes you"
+                android:textColor="@color/green"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/person_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/person_status"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="18dp"
+                android:text="BDT 1357"
+                android:textColor="@color/green"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    
+
+</RelativeLayout>

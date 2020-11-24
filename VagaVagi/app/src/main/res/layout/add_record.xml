@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/record_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="Description"
+        />
+
+
+    <EditText
+        android:id="@+id/record_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record_description"
+        android:layout_margin="20dp"
+        android:hint="0.00"
+        />
+
+    <TextView
+        android:id="@+id/textview_paidby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record_amount"
+        android:layout_marginLeft="20dp"
+        android:text="Paid By"
+        android:textSize="25dp"
+
+        />
+
+    <Button
+        android:id="@+id/button_paidby"
+        android:layout_toRightOf= "@id/textview_paidby"
+        android:layout_below="@+id/record_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You"
+        android:layout_marginLeft="25dp"
+        />
+
+    <TextView
+        android:id="@+id/textview_split"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_paidby"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="and Split"
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:id="@+id/button_split"
+        android:layout_toRightOf= "@id/textview_split"
+        android:layout_below="@+id/button_paidby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equally"
+        android:layout_marginLeft="25dp"
+        />
+
+</RelativeLayout>

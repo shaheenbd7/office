@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class MyService extends Service {
     private static final String TAG = "Test: ";
 
-    public static RequestQueue requestQueue;
+    public RequestQueue requestQueue;
 
     @Override
     public void onCreate() {
@@ -42,6 +42,7 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        stopSelf();
     }
 
     @Nullable

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:outlineAmbientShadowColor="@color/cardview_light_background"
+        android:outlineSpotShadowColor="@color/cardview_dark_background"
+        android:elevation="5dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/image_record"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_baseline_assignment_24" />
+
+            <TextView
+                android:id="@+id/textView_record_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/image_record"
+                android:text="You Updated 'Bajar' "
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/textView_record_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_record_description"
+                android:layout_toRightOf="@id/image_record"
+                android:text="You get back BDT 997.00"
+                android:textColor="@color/green"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/textView_record_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_record_status"
+                android:layout_toRightOf="@id/image_record"
+                android:text="21 Nov 2020"
+                android:textColor="@color/cadet_blue"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

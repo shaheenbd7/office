@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        android:outlineAmbientShadowColor="@color/cardview_light_background"
+        android:outlineSpotShadowColor="@color/cardview_dark_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/image_group"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_baseline_home_work_24" />
+
+            <TextView
+                android:id="@+id/textView_group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/image_group"
+                android:text="My Group"
+                android:textAlignment="textStart"
+                android:textColor="@color/orange_red"
+                android:textSize="25dp"
+
+                />
+
+            <TextView
+                android:id="@+id/textView_group_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/textView_group_name"
+                android:text="you owe"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/textView_group_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_group_status"
+                android:layout_toRightOf="@id/textView_group_name"
+                android:text="BDT 997.00"
+                android:textAlignment="textEnd"
+                android:textColor="@color/green"
+                android:textSize="25dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
