@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" 
-    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -10,6 +10,7 @@
         android:outlineSpotShadowColor="@color/cardview_dark_background"
         android:outlineAmbientShadowColor="@color/cardview_light_background"
         android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
         >
 
         <RelativeLayout
@@ -18,10 +19,10 @@
 
             <ImageView
                 android:id="@+id/person_image"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="65dp"
+                android:layout_height="70dp"
                 android:adjustViewBounds="true"
-                android:background="@drawable/ic_launcher_background"
+                android:background="@drawable/icon_face"
                 android:scaleType="centerCrop"
                 android:layout_margin="10dp"
                 />
@@ -35,7 +36,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/person_image"
                 android:text="Person Name"
-                android:textColor="@color/black"
+                android:textColor="@color/orchid"
                 android:textSize="25dp"
                 />
 
@@ -48,7 +49,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="18dp"
                 android:text="owes you"
-                android:textColor="@color/green"
+                android:textColor="@color/cornflower_blue"
                 android:textSize="20dp"
                 />
 

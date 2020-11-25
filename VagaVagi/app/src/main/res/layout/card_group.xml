@@ -2,15 +2,18 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="7dp"
         android:elevation="5dp"
         android:outlineAmbientShadowColor="@color/cardview_light_background"
-        android:outlineSpotShadowColor="@color/cardview_dark_background">
+        android:outlineSpotShadowColor="@color/cardview_dark_background"
+        app:cardCornerRadius="10dp"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,10 +22,10 @@
 
             <ImageView
                 android:id="@+id/image_group"
-                android:layout_width="50dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="75dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_baseline_home_work_24" />
+                android:src="@drawable/icon_group" />
 
             <TextView
                 android:id="@+id/textView_group_name"
@@ -32,7 +35,7 @@
                 android:layout_toRightOf="@id/image_group"
                 android:text="My Group"
                 android:textAlignment="textStart"
-                android:textColor="@color/orange_red"
+                android:textColor="@color/blue_violet"
                 android:textSize="25dp"
 
                 />
@@ -42,10 +45,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/textView_group_name"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
                 android:text="you owe"
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
-                android:textSize="25dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView_group_amount"
@@ -53,10 +58,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView_group_status"
                 android:layout_toRightOf="@id/textView_group_name"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="6dp"
                 android:text="BDT 997.00"
                 android:textAlignment="textEnd"
                 android:textColor="@color/green"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
         </RelativeLayout>
 

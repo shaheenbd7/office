@@ -64,30 +64,30 @@ public class GroupsFragment extends Fragment {
         }
 
 
-//        groupList = new ArrayList<>();
-//        groupList.add(new Group(1,"Group 1", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 2", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 3", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 4", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 5", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 6", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 7", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 8", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 9", "You owe","BDT 700"));
-//        groupList.add(new Group(1,"Group 10", "You owe","BDT 700"));
+        groupList = new ArrayList<>();
+        groupList.add(new Group(1,"Group 1", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 2", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 3", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 4", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 5", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 6", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 7", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 8", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 9", "You owe","BDT 700"));
+        groupList.add(new Group(1,"Group 10", "You owe","BDT 700"));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_groups, container, false);
+//        return inflater.inflate(R.layout.fragment_groups, container, false);
 
-//        v = inflater.inflate(R.layout.fragment_people, container, false);
-//        recyclerViewGroup = v.findViewById(R.id.recycler_view_group);
-//        AdapterGroup adapterGroup = new AdapterGroup(getContext(), groupList);
-//        recyclerViewGroup.setLayoutManager( new LinearLayoutManager(getActivity()));
-//        recyclerViewGroup.setAdapter( adapterGroup  );
-//        return v;
+        v = inflater.inflate(R.layout.fragment_groups, container, false);
+        recyclerViewGroup = v.findViewById(R.id.recycler_view_group);
+        AdapterGroup adapterGroup = new AdapterGroup(getContext(), groupList);
+        recyclerViewGroup.setLayoutManager( new LinearLayoutManager(getActivity()));
+        recyclerViewGroup.setAdapter( adapterGroup  );
+        return v;
     }
 }

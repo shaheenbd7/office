@@ -10,6 +10,7 @@
         android:id="@+id/recyler_view_record"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/dark_gray"
         />
 
 </FrameLayout>

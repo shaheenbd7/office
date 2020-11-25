@@ -9,8 +9,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_group"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/light_grey"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_gray"
         android:scrollbars="vertical"
         />
 
