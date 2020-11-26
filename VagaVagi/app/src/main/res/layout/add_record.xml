@@ -12,7 +12,6 @@
         android:hint="Description"
         />
 
-
     <EditText
         android:id="@+id/record_amount"
         android:layout_width="match_parent"
