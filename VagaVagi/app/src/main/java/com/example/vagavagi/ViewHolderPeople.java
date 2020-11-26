@@ -2,6 +2,7 @@ package com.example.vagavagi;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ public class ViewHolderPeople extends RecyclerView.ViewHolder {
     public TextView status;
     public TextView balance;
     public ImageView imageView;
+    public RelativeLayout cellPerson;
 
     public ViewHolderPeople(@NonNull View itemView) {
         super(itemView);
@@ -22,5 +24,6 @@ public class ViewHolderPeople extends RecyclerView.ViewHolder {
         status = (TextView) itemView.findViewById(R.id.person_status);
         balance = (TextView) itemView.findViewById(R.id.person_balance);
         imageView = (ImageView) itemView.findViewById(R.id.person_image);
+        cellPerson = (RelativeLayout) itemView.findViewById(R.id.cell_person);
     }
 }

@@ -8,17 +8,33 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements RecordDialog.AddRecordDialogListener{
+
+    private static final String TAG = "shan";
 
     private Toolbar toolbar;
     private ViewPager viewPager;
@@ -28,9 +44,13 @@ public class MainActivity extends AppCompatActivity implements RecordDialog.AddR
     private GroupsFragment groupsFragment;
     private RecordsFragment recordsFragment;
 
-    FloatingActionButton add;
+    FloatingActionButton fbuttonAdd;
 
     private DrawerLayout drawer;
+
+    private RequestQueue mRequestQue;
+    private String URL = "https://fcm.googleapis.com/fcm/send";
+    private String serverKey = "AAAADEeuAs4:APA91bHAcpf02edEXlQPGzcct2QyBxQp94Zv69SYOOfzpgFdbA81nBqqOMSrax_s34qEYUY_Y-70IDoqwrquFpMmNn7okyFhmceaJ6vbhdJK4FgADExlkbr8o5dy4zZT1eerRaGMnpem";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +62,6 @@ public class MainActivity extends AppCompatActivity implements RecordDialog.AddR
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
 
         viewPager = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tab_layout);
@@ -60,8 +78,11 @@ public class MainActivity extends AppCompatActivity implements RecordDialog.AddR
         viewPagerAdapter.addFragment(recordsFragment,"Records");
         viewPager.setAdapter(viewPagerAdapter);
 
-        add = findViewById(R.id.button_add);
-        add.setOnClickListener(new View.OnClickListener() {
+        mRequestQue = Volley.newRequestQueue(this);
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+
+        fbuttonAdd = findViewById(R.id.button_add);
+        fbuttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
@@ -81,6 +102,58 @@ public class MainActivity extends AppCompatActivity implements RecordDialog.AddR
     public void addRecord() {
         RecordDialog record = new RecordDialog();
         record.show(getSupportFragmentManager(), "Example");
+    }
+
+    private void sendNotification() {
+
+        Log.d(TAG, "sendNotification: ");
+
+        JSONObject json = new JSONObject();
+        try {
+            //json.put()
+            json.put("to","/topics/"+"news");
+            JSONObject notificationObj = new JSONObject();
+            notificationObj.put("title","any title");
+            notificationObj.put("body","any body");
+
+//            JSONObject extraData = new JSONObject();
+//            extraData.put("brandId","puma");
+//            extraData.put("category","Shoes");
+
+            json.put("notification",notificationObj);
+//            json.put("data",extraData);
+            Log.d(TAG, "sendNotification: " + " Hello ");
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, URL,
+                    json,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Successfully updated
+                            Log.d(TAG, "onResponse: ");
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    // failure on upload data
+                    Log.d(TAG, "onError: "+error.networkResponse);
+                }
+            }
+            ){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String,String> header = new HashMap<>();
+                    header.put("content-type","application/json");
+                    header.put("authorization","key="+serverKey);
+                    return header;
+                }
+            };
+            mRequestQue.add(request);
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
     }
 
 
@@ -104,7 +177,10 @@ public class MainActivity extends AppCompatActivity implements RecordDialog.AddR
             case R.id.item2:
                 Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
                 return true;
-
+            case R.id.item3:
+                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
+                sendNotification();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

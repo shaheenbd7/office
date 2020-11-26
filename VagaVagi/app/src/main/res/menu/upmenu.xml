@@ -10,4 +10,9 @@
         android:title="Create Group"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/item3"
+        android:title="(Debug) Notification"
+        app:showAsAction="never" />
+
 </menu>

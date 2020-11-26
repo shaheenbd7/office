@@ -15,7 +15,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/cell_person"
+            >
 
             <ImageView
                 android:id="@+id/person_image"
@@ -70,6 +72,5 @@
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-    
 
 </RelativeLayout>

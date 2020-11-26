@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "52742193870",
+    "firebase_url": "https://shareexpense123.firebaseio.com",
+    "project_id": "shareexpense123",
+    "storage_bucket": "shareexpense123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52742193870:android:5781c06f189634b75a069f",
+        "android_client_info": {
+          "package_name": "com.example.vagavagi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52742193870-t6g70sqn330fcl507u0agd4q98l1bllv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vagavagi",
+            "certificate_hash": "6a84166934c60ce718ba46a22e35c33c2ca8cfa5"
+          }
+        },
+        {
+          "client_id": "52742193870-se2pobcogffa89h9rtk2kl8d88nvd3c3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA94rAnlSwoKircw-smvqIFFs0RhvFvcVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52742193870-se2pobcogffa89h9rtk2kl8d88nvd3c3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
