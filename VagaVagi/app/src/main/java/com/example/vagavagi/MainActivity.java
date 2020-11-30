@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity implements RecordDialog.AddR
             //json.put()
             json.put("to","/topics/"+"news");
             JSONObject notificationObj = new JSONObject();
-            notificationObj.put("title","any title");
-            notificationObj.put("body","any body");
+            notificationObj.put("title","ShareExpense");
+            notificationObj.put("body","MD ABUL BABUL updated an expense.");
 
 //            JSONObject extraData = new JSONObject();
 //            extraData.put("brandId","puma");
