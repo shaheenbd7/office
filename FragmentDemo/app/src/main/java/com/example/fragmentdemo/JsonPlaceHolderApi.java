@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface JsonPlaceHolderApi {
 
-    @GET("v2/list?page=2&limit=100")
-    Call<List<StreamData>> getPosts();
+    @GET("v2/list?page=1&limit=100")
+    Call<List<StreamData>> getData();
 }

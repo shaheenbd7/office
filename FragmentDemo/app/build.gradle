@@ -26,6 +26,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -34,25 +35,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.2.1'
-
-    // Firebase
-    implementation 'com.google.firebase:firebase-analytics:17.5.0'
-    implementation 'com.google.firebase:firebase-core:16.0.9'
-    implementation 'com.google.firebase:firebase-auth:17.0.0'
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
-
-    // added from Firebase documentation
-    implementation platform('com.google.firebase:firebase-bom:26.1.0')
-    // messaging
-    implementation 'com.google.firebase:firebase-messaging:21.0.0'
-
-    // firebase database
-    implementation 'com.google.firebase:firebase-database:17.0.0'
-    implementation 'com.firebaseui:firebase-ui-database:0.4.0'
-
-    // volley
-    implementation 'com.android.volley:volley:1.1.1'
-
+    
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
@@ -62,11 +45,6 @@ dependencies {
 
     // picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
-    compileOnly 'com.google.android.wearable:wearable:2.7.0'
-
-    // Animation
-    def lottieVersion = "3.0.7"
-    implementation "com.airbnb.android:lottie:$lottieVersion"
 
     def lifecycle_version = "1.1.1"
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"

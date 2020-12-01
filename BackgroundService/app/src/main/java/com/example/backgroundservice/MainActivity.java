@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,11 +29,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "TEST :: ";
+    private static final String TAG = "MainActivity";
 
     private RecyclerView recyclerView;
     public static  Adapter adapter;
-    public static  ArrayList<Item> itemList;
+    public  ArrayList<Item> itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +51,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void callService() {
+        PendingIntent pendingResult = createPendingResult(100, new Intent(), 0);
         Intent intent = new Intent(this, MyService.class);
+        intent.putExtra("pendingIntent", pendingResult);
         startService(intent);
     }
 
-    public static void update() {
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        if(requestCode==100 && resultCode==200) {
+
+            Log.d(TAG, "onActivityResult: " + data.getStringExtra("name"));
+
+            String authorName = data.getStringExtra("name");
+            String url = data.getStringExtra("url");
+            Item item = new Item(url,authorName);
+            itemList.add(item);
+            update();
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void update() {
         Log.d(TAG, "update: " + itemList.size());
         adapter.notifyDataSetChanged();
     }

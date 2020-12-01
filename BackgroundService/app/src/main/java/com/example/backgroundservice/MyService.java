@@ -1,5 +1,6 @@
 package com.example.backgroundservice;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -21,9 +22,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MyService extends Service {
-    private static final String TAG = "Test: ";
+    private static final String TAG = "MyService";
 
     public RequestQueue requestQueue;
+    PendingIntent data;
 
     @Override
     public void onCreate() {
@@ -35,6 +37,7 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // do your task
         Log.d(TAG, "onStartCommand: ");
+        data = intent.getParcelableExtra("pendingIntent");
         parseJson();
         return START_STICKY;
     }
@@ -59,17 +62,33 @@ public class MyService extends Service {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray jsonArray = response.getJSONArray("hits");
+                            ArrayList<Item> mList = new ArrayList<>();
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject hit = jsonArray.getJSONObject(i);
                                 String creatorName = hit.getString("user");
                                 String imageUrl = hit.getString("webformatURL");
-                                Item mItem = new Item(imageUrl, creatorName);
-                                MainActivity.itemList.add(mItem);
-                                Log.d(TAG, "No "+i+" :C: "+mItem.getCreator());
-                                Log.d(TAG, "No "+i+" :U: "+mItem.getImageUrl());
+//                                Item mItem = new Item(imageUrl, creatorName);
+//                                mList.add(mItem);
+//                                Log.d(TAG, "No "+i+" :C: "+mItem.getCreator());
+//                                Log.d(TAG, "No "+i+" :U: "+mItem.getImageUrl());
+
+                                Intent result = new Intent();
+                                result.putExtra("name", creatorName);
+                                result.putExtra("url", imageUrl);
+                                data.send(MyService.this, 200, result);
                             }
-                            MainActivity.update();
+
+//                            MainActivity.itemList.add(mItem);
+//                            MainActivity.update();
+
+//                            Intent result = new Intent();
+//                            result.putExtra("name", mList.get(0).getCreator());
+//
+//                            data.send(MyService.this, 200, result);
+
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (PendingIntent.CanceledException e) {
                             e.printStackTrace();
                         }
                     }

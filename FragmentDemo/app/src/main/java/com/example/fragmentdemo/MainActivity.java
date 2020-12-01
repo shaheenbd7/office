@@ -22,11 +22,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity: Shan: ";
+    private static final String TAG = "MainActivity: Shaheen: ";
     
     RecyclerView recyclerView;
     MyAdapter myAdapter;
-    ArrayList<Data> dataArrayList = new ArrayList<>();
+    ArrayList<Data> dataArrayList;
     DataViewModel mViewModel;
 
     @Override
@@ -34,19 +34,62 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setRecyclerView();
+        dataArrayList = new ArrayList<>();
 
-        mViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
+       // setRecyclerView();
 
-        mViewModel.getAllData().observe(this, new Observer<List<Data>>() {
-            @Override
-            public void onChanged(@Nullable List<Data> allData) {
-                myAdapter.setData(allData);
-            }
-        });
+//        mViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
+//
+//        mViewModel.getAllData().observe(this, new Observer<List<Data>>() {
+//            @Override
+//            public void onChanged(@Nullable List<Data> allData) {
+//                myAdapter.setData(allData);
+//            }
+//        });
 
-        downloadData();
+        // downloadData();
+        startThread();
+
+
+        //prepareDummyData();
+        //setRecyclerView();
+        //setViewModel();
+
     }
+
+
+    void prepareDummyData() {
+        Data d = new Data("0",
+                "Nadir Balcikli",
+                3264,
+                2176,
+                "https://unsplash.com/photos/wE9nUW7tMmk",
+                "https://picsum.photos/id/119/3264/2176");
+
+        dataArrayList.add(d);
+        dataArrayList.add(d);
+        dataArrayList.add(d);
+        dataArrayList.add(d);
+        dataArrayList.add(d);
+        dataArrayList.add(d);
+    }
+
+    public void startThread() {
+        ExampleThread thread = new ExampleThread();
+        thread.start();
+    }
+
+    class ExampleThread extends Thread {
+
+        ExampleThread() {
+        }
+
+        @Override
+        public void run() {
+            downloadData();
+        }
+    }
+
 
     public void setRecyclerView() {
         recyclerView = findViewById(R.id.recycler_view);
@@ -55,6 +98,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
         myAdapter = new MyAdapter(this, dataArrayList);
         recyclerView.setAdapter( myAdapter  );
+
+        //myAdapter.setData(dataArrayList);
+        setViewModel();
+    }
+
+    public void setViewModel() {
+        mViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
+        mViewModel.getAllData().observe(this, new Observer<List<Data>>() {
+            @Override
+            public void onChanged(@Nullable List<Data> allData) {
+                myAdapter.setData(allData);
+            }
+        });
     }
 
     public void downloadData() {
@@ -65,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         
         JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        Call<List<StreamData>> call = jsonPlaceHolderApi.getPosts();
+        Call<List<StreamData>> call = jsonPlaceHolderApi.getData();
         call.enqueue(new Callback<List<StreamData>>() {
             @Override
             public void onResponse(Call<List<StreamData>> call, Response<List<StreamData>> response) {
@@ -75,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 List<StreamData> dataList = response.body();
+                ArrayList<Data> temArray = new ArrayList<>();
+
                 for (StreamData data : dataList) {
 
                     Log.d(TAG, "ID: " + data.getId());
@@ -82,21 +140,21 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "Height-Width " + data.getHeight() + "-" + data.getWidth());
 
                     Data cellData = new Data(data);
-                    dataArrayList.add(cellData);
-                    mViewModel.insert(cellData);
+                    temArray.add(cellData);
+
+                    //dataArrayList.add(cellData);
+                    //mViewModel.insert(cellData);
                 }
+                //myAdapter.setData(temArray);
+                dataArrayList = temArray;
+                setRecyclerView();
             }
 
             @Override
             public void onFailure(Call<List<StreamData>> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + "Error !!!");
             }
+
         });
-
     }
-
-
-
-
-
 }

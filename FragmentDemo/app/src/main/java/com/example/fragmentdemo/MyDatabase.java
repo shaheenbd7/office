@@ -41,7 +41,7 @@ public abstract class MyDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            myDao.insert(new Data("0", "Nadir Balcikli", 3264, 2176, "https://unsplash.com/photos/wE9nUW7tMmk", "https://picsum.photos/id/119/3264/2176"));
+            //myDao.insert(new Data("0", "Nadir Balcikli", 3264, 2176, "https://unsplash.com/photos/wE9nUW7tMmk", "https://picsum.photos/id/119/3264/2176"));
             return null;
         }
     }
