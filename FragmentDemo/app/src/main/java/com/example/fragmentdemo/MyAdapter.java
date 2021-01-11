@@ -1,6 +1,7 @@
 package com.example.fragmentdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,25 +40,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        Data currentData = allData.get(position);
+        final Data currentData = allData.get(position);
         holder.textViewId.setText("ID: " + currentData.getId());
         holder.textViewAuthor.setText("Author: " + currentData.getAuthor());
 
         // Picasso.get().load(currentData.getDownload_url()).into(holder.imageView);
-       // Glide.with(context).load(currentData.getDownload_url()).into(holder.imageView);
+       Glide.with(context).load(currentData.getDownload_url()).into(holder.imageView);
 
         holder.cell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Log.d(TAG, "onClick: " );
-                Toast.makeText(context, "Profile of :: " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Cell:: " + position, Toast.LENGTH_SHORT).show();
 
-                AppCompatActivity activity = (AppCompatActivity)view.getContext();
-                //AppCompatActivity activity = view.getContext();
-                FragmentDetails fragmentDetails = new FragmentDetails();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.start_point,fragmentDetails).addToBackStack(null).commit();
+//                AppCompatActivity activity = (AppCompatActivity)view.getContext();
+//                FragmentDetails fragmentDetails = new FragmentDetails();
+//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.start_point,fragmentDetails).addToBackStack(null).commit();
 
+                Intent intent = new Intent(context, DetailsActivity.class);
+                //intent.putExtra("position", String.valueOf(position));
+                intent.putExtra("position", currentData.getId());
+                context.startActivity(intent);
             }
         });
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity"
+    android:id="@+id/container"
+    android:background="@color/black"
+    >
+
+    <FrameLayout
+        android:id="@+id/details_fagments"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/ic_launcher_background"
+        />
+
+    <TextView
+        android:id="@+id/details_id"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/details_fagments"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="ID: "
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/details_author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/details_id"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Author: "
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/details_gray_image"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/details_author_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Show Gray Scale Image"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        />
+
+    <Button
+        android:id="@+id/details_blur_image"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/details_gray_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Show Blur Image"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        />
+
+</RelativeLayout>

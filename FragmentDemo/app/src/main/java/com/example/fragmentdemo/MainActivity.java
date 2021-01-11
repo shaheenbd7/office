@@ -52,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //prepareDummyData();
-        //setRecyclerView();
+        setRecyclerView();
         //setViewModel();
-
     }
 
 
@@ -147,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //myAdapter.setData(temArray);
                 dataArrayList = temArray;
-                setRecyclerView();
+                myAdapter.setData(dataArrayList);
+                //setRecyclerView();
             }
 
             @Override

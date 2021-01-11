@@ -1,0 +1,257 @@
+[
+  {
+    "customerName": "42Gears SureMDM",
+    "packageName": "com.nix",
+    "adminComponent": "com.nix/com.nix.NixDeviceAdmin",
+    "signatureChecksum": "CbIXJyiLvnV9PBgBs7zmKGkyIkf31dJA_DtODzQYiug=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=suremdm"
+    }
+  },
+  {
+    "customerName": "7P",
+    "packageName": "com.sevenprinciples.android.mdm.safeclient",
+    "adminComponent": "com.sevenprinciples.android.mdm.safeclient/com.sevenprinciples.android.mdm.safeclient.security.MDMDeviceAdminReceiver",
+    "signatureChecksum": "_hJvOa_E4GobR_xptAL2az_lWYAk9ghxxy8fUb1IxOE=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri"
+    }
+  },
+  {
+    "customerName": "Airwatch",
+    "externalIntent": {
+      "userName": "un",
+      "password": "pw",
+      "kmeUri": "serverurl",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=hub"
+    },
+    "exclude": true
+  },
+  {
+    "customerName": "BlackBerry",
+    "packageName": "com.rim.mobilefusion.client",
+    "adminComponent": "com.rim.mobilefusion.client/com.rim.mobilefusion.client.actions.utils.device_administration.ClientDeviceAdminReceiver",
+    "signatureChecksum": "Kloyv2h11VAaK54HeMe0orD-7MRA4s-MFhCWPHSoSXc=",
+    "externalIntent": {
+      "userName": "Username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=blackberry"
+    }
+  },
+  {
+    "customerName": "Chimpa MDM",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=chimpa"
+    }
+  },
+  {
+    "customerName": "Citrix",
+    "packageName": "com.zenprise",
+    "adminComponent": "com.zenprise/com.zenprise.configuration.AdminFunction",
+    "signatureChecksum": "qn7oZUtheu3JBAinzZRrrjCQv6LOO6Ll1OjcxT3-yKM=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=xenmobile"
+    }
+  },
+  {
+    "customerName": "Cortado",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=cortado"
+    }
+  },
+  {
+    "customerName": "DuoSTATION",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=duostation"
+    }
+  },
+  {
+    "customerName": "FAMOC",
+    "packageName": "com.famoc.baseAgent",
+    "adminComponent": "com.famoc.baseAgent/com.fancyfon.baseAgent.deviceAdmin.FamocDeviceAdminReceiver",
+    "signatureChecksum": "96ipBDr9pXRsHHIxAPBJQ5xacUwwuyCq6wdy0is80fo=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=famoc"
+    }
+  },
+  {
+    "customerName": "Knox Manage",
+    "packageName": "com.sds.emm.cloud.knox.samsung",
+    "adminComponent": "com.sds.emm.cloud.knox.samsung/com.sds.emm.emmagent.core.event.receiver.DeviceAdminPolicyReceiver",
+    "signatureChecksum": "MzDUGUat9VKJ1Xv8FBmP2rts6f-5K4RFLVPmxXw6gpY=",
+    "externalIntent": {
+      "userName": "UserId",
+      "password": "Password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=knoxmanage"
+    }
+  },
+  {
+    "customerName": "MaaS360",
+    "packageName": "com.fiberlink.maas360.android.control",
+    "adminComponent": "com.fiberlink.maas360.android.control/com.fiberlink.maas360.android.control.receivers.Maas360DeviceAdminReceiver",
+    "signatureChecksum": "pQaLOW_QNQdDtk8XxdbzTO9HV2OcokFOrO9nbczTD60=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=maas360"
+    }
+  },
+  {
+    "customerName": "ManageEngine",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=memdm"
+    }
+  },
+  {
+    "customerName": "Matrix42 Silverback",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=matrix42"
+    }
+  },
+  {
+    "customerName": "Microsoft Intune",
+    "packageName": "com.google.android.apps.work.clouddpc",
+    "adminComponent": "com.google.android.apps.work.clouddpc/com.google.android.apps.work.clouddpc.receivers.CloudDeviceAdminReceiver",
+    "signatureChecksum": "I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=setup"
+    }
+  },
+  {
+    "customerName": "Miradore",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=miradore"
+    }
+  },
+  {
+    "customerName": "MobileIron",
+    "packageName": "com.mobileiron",
+    "adminComponent": "com.mobileiron/com.mobileiron.receiver.MIDeviceAdmin",
+    "signatureChecksum": "xFg1LVfpb97Vq958bulXHYWpd4hmVOl2RU2ThGyktc0=",
+    "externalIntent": {
+      "userName": "user",
+      "password": "password",
+      "kmeUri": "server"
+    }
+  },
+  {
+    "customerName": "Proget",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=progetmdm"
+    }
+  },
+  {
+    "customerName": "SafePhone",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://safephone.store/android/monitor.apk"
+    }
+  },
+  {
+    "customerName": "Samsung SDS EMM",
+    "externalIntent": {
+      "userName": "UserId",
+      "password": "Password",
+      "kmeUri": "kmeUri"
+    }
+  },
+  {
+    "customerName": "Snow Software",
+    "externalIntent": {
+      "userName": "sdm_username",
+      "password": "sdm_password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=snow"
+    }
+  },
+  {
+    "customerName": "SOTI",
+    "packageName": "net.soti.mobicontrol.androidwork",
+    "adminComponent": "net.soti.mobicontrol.androidwork/net.soti.mobicontrol.admin.DeviceAdminAdapter",
+    "signatureChecksum": "hn8mSNJMPcovWbnnWrb-uMpWZjNlNp-jyV_2A-Whumc=",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=mobicontrol"
+    }
+  },
+  {
+    "customerName": "Sophos Mobile",
+    "externalIntent": {
+      "userName": "user",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=sophos"
+    }
+  },
+  {
+    "customerName": "TinyMDM",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "server",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=tinymdm"
+    }
+  },
+  {
+    "customerName": "Workspace ONE UEM",
+    "packageName": "com.airwatch.androidagent",
+    "adminComponent": "com.airwatch.androidagent/com.airwatch.agent.DeviceAdministratorReceiver",
+    "signatureChecksum": "6kyqxDOjgS30jvQuzh4uvHPk-0bmAD-1QU7vtW7i_o8=",
+    "externalIntent": {
+      "userName": "un",
+      "password": "pw",
+      "kmeUri": "serverurl",
+      "mdmApkUri": "https://play.google.com/managed/downloadManagingApp?identifier=hub"
+    }
+  },
+  {
+    "customerName": "Other",
+    "externalIntent": {
+      "userName": "username",
+      "password": "password",
+      "kmeUri": "kmeUri"
+    }
+  }
+]

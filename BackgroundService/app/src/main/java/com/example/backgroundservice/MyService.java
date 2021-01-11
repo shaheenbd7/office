@@ -67,24 +67,12 @@ public class MyService extends Service {
                                 JSONObject hit = jsonArray.getJSONObject(i);
                                 String creatorName = hit.getString("user");
                                 String imageUrl = hit.getString("webformatURL");
-//                                Item mItem = new Item(imageUrl, creatorName);
-//                                mList.add(mItem);
-//                                Log.d(TAG, "No "+i+" :C: "+mItem.getCreator());
-//                                Log.d(TAG, "No "+i+" :U: "+mItem.getImageUrl());
 
                                 Intent result = new Intent();
                                 result.putExtra("name", creatorName);
                                 result.putExtra("url", imageUrl);
                                 data.send(MyService.this, 200, result);
                             }
-
-//                            MainActivity.itemList.add(mItem);
-//                            MainActivity.update();
-
-//                            Intent result = new Intent();
-//                            result.putExtra("name", mList.get(0).getCreator());
-//
-//                            data.send(MyService.this, 200, result);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

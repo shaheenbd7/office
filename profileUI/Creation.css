@@ -1,0 +1,157 @@
+@import url('../../../../resources/fonts/customfonts.css');
+
+.formfield * {
+  vertical-align: top;
+  align-self: center;
+}
+
+.hide {
+  display: none;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  height: 768px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+}
+
+.title {
+  width: 286px;
+  height: 49px;
+  margin: 33px 482px 9px 498px;
+  font-size: 44px;
+  font-family: SamsungSharpSans-Bold;
+  text-align: center;
+  color: #000000;
+}
+
+.subText {
+  width: 822px;
+  height: 26px;
+  margin: 9px 215px 77px 229px;
+  font-family: SamsungOne-400;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.formName {
+  width: 255px;
+  height: 18px;
+  margin-top: 0px;
+  font-family: SamsungSharpSans-Bold;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  color: #000000;
+}
+
+.label {
+  height: 17px;
+  font-size: 14px;
+  font-family: SamsungOne-700;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.buttonLabel {
+  height: 20px;
+  margin: 0 0 0 2px;
+  font-family: SamsungOne-400;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: #404040;
+}
+
+.placeholderText {
+  height: 20px;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: #404040;
+}
+
+.textInputBox {
+  width: 430px;
+  height: 34px;
+  margin: 6px 0 0;
+  border-radius: 2px;
+  border: solid 1px #cccccc;
+  background-color: #ffffff;
+  font-size: 13px;
+  padding-inline-start: 10px;
+  font-family: SamsungOne-400;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.dropDownSelector {
+  width: 440px;
+  height: 34px;
+  border-radius: 2px;
+  font-family: SamsungOne-400;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: #404040;
+}
+
+.indent {
+  margin-left: 20px;
+}
+
+.indentedWidth {
+  width: 410px;
+}
+
+.indentedDropDownWidth {
+  width: 420px;
+}
