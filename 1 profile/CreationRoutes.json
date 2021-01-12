@@ -1,0 +1,10 @@
+{
+  "BASIC": "/basic",
+  "WIFI": "/wifi",
+  "LEGAL": "/legal",
+  "DO_PROFILE": "/doProfile",
+  "OPTION_CONFIG": "/option_config",
+  "SUMMARY": "/summary",
+  "GENERATE_QR": "/generate_qr",
+  "NOT_FOUND": "not_found"
+}
