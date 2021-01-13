@@ -1,0 +1,131 @@
+.container {
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.summaryFormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;    
+    width: 1200px; 
+  }
+
+.pageTitle {
+    width: 286px;
+    height: 49px;
+    margin: 33px 482px 9px 498px;
+    font-size: 44px;
+    text-align: center;
+    color: #000000;
+  }
+
+.pageSubTitle {
+    width: 822px;
+    height: 26px;
+    margin: 9px 215px 77px 229px;
+    font-family: SamsungOne-400;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+  }
+
+.details {
+    display: flex;
+    flex-direction: row;
+}
+
+.firstSection {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.secondSection {
+    border-left: 3px solid #e5e5e5;
+    border-right: 3px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.thirdSection {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;    
+}
+
+.sectionTitle {
+  font-size: 17px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.sectionSubTitle {
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.sectionText {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+ }
+ 
+ .reset_button {    
+    padding: 10px;
+ }
+ 
+ .generate_qr_button {
+    padding: 10px;
+ }
