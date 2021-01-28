@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styles from './Style.css';
 
 // function createNotes(note) {
 //   return <Note key={note.key} title={note.title} content={note.content} />;
@@ -69,9 +70,21 @@ function App() {
 
   // }
 
+  function CheckFlexDirection() {
+    return (
+      <div style={{border: '3px solid black', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '400px'}}>
+        <div style={{border: '3px solid green', height: '10px'}}>HI_II</div>
+        <div style={{border: '3px solid red', }}>hello</div>
+      </div>
+    );
+  }
+
+
   return (
     <div>
       <h1>HELLO SHAHEEN</h1>
+      <CheckFlexDirection />
+
       <SSIDSection />
 
       <div onClick={ADD} onKeyPress={ADD} role="button">
