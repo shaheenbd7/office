@@ -112,7 +112,6 @@ export default function GeneralConfiguration({ rootJson }: DeviceParams) {
 
   const switchInlineStyle: CSSProperties = {
     marginTop: '3px',
-    border: '3px solid yellow',
   };
 
   const containerInlineStyle: CSSProperties = {
@@ -166,7 +165,7 @@ export default function GeneralConfiguration({ rootJson }: DeviceParams) {
 
   function NFCSection() {
     return (
-      <div style={{border: '3px solid blue',}}>
+      <div>
         <h3 className={styles.formName}>{GENERAL_CONFIG_FORM_STRINGS.NFC}</h3>
         <div className={`${styles.switchContainer} ${styles.mediumMarginTop}`}>
           <div style={switchInlineStyle}>
@@ -258,7 +257,7 @@ export default function GeneralConfiguration({ rootJson }: DeviceParams) {
   function WIFIBlockListSection() {
 
     return (
-      <div style={{border: '3px solid green',}}>
+      <div>
         <div
           className = {styles.largeMarginTop}
           style = {containerInlineStyle}
